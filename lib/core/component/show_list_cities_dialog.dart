@@ -21,16 +21,15 @@ showListCityDialog(BuildContext ctxt, Size size) {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  //print(productCategories[index]);
                   BlocProvider.of<TourGuideCubit>(ctxt).selectedCityController.text = _cities[index];
-                  // GoRouter.of(context).pop();
+                  Navigator.pop(context);
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(children: [
                     const Icon(
-                      Icons.category_outlined,
-                      color: ColorsApp.primaryColor,
+                      Icons.location_city,
+                      color: ColorsApp.darkPrimary,
                     ),
                     SizedBox(
                       width: 70,
@@ -49,7 +48,7 @@ showListCityDialog(BuildContext ctxt, Size size) {
         actions: [
           TextButton(
             onPressed: () {
-              //   GoRouter.of(ctxt).pop();
+              Navigator.pop(ctx);
             },
             child: const Text(
               "Cancel",

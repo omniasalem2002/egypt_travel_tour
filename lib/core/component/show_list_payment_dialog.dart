@@ -21,23 +21,22 @@ showListPaymentDialog(BuildContext ctxt, Size size) {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  //print(productCategories[index]);
                   BlocProvider.of<TourGuideCubit>(ctxt).selectedPaymentController.text = _paymentTypes[index];
-                 // GoRouter.of(context).pop();
+                  Navigator.pop(context);
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(children: [
                     const Icon(
-                      Icons.category_outlined,
-                      color: ColorsApp.primaryColor,
+                      Icons.payment_outlined,
+                      color: ColorsApp.darkPrimary,
                     ),
                     SizedBox(
                       width: 70,
                     ),
                     Text(
                       _paymentTypes[index],
-                      style: Styles.font13BlueSemiBold(context)
+                      style: Styles.font14BlueSemiBold(context)
                           .copyWith(fontStyle: FontStyle.italic),
                     ),
                   ]),
@@ -49,7 +48,7 @@ showListPaymentDialog(BuildContext ctxt, Size size) {
         actions: [
           TextButton(
             onPressed: () {
-           //   GoRouter.of(ctxt).pop();
+              Navigator.pop(ctx);
             },
             child: const Text(
               "Cancel",

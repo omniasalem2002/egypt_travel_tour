@@ -124,9 +124,9 @@ class _CountryCitySelectionState extends State<CountryCitySelection> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const TourGuides();
-                              },
-                            ),
+                                return TourGuides(city: _selectedCity ??
+                                    'Default City'); // Provide a default city or empty string                              },
+                              }),
                           );
 
                           //validateThenDoAddDepartment(context);
